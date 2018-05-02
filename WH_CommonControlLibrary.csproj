@@ -90,6 +90,7 @@
     <Compile Include="Functionality\Common\WH_CommonFunction.cs" />
     <Compile Include="Functionality\MultiLanguage\WH_MultiLanguageSupport.cs" />
     <Compile Include="UIControl\Control\WH_MultiLanguageComboBox.cs" />
+    <Compile Include="UIControl\Control\WH_RegexTextBox.cs" />
     <Compile Include="UIControl\Converter\WH_Converter.cs" />
     <Compile Include="UIControl\Control\WH_SelectPathControl.xaml.cs">
       <DependentUpon>WH_SelectPathControl.xaml</DependentUpon>
