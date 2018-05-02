@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,41 @@ using System.Windows.Media;
 namespace WH_CommonControlLibrary.UIControl.Converter
 {
     /// <summary>
+    /// 取反转换
+    /// </summary>
+    public class Converter_CommonNotValueConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            switch ((bool?)value)
+            {
+                case true:
+                    return false;
+                case false:
+                    return true;
+                default:
+                    return value;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            switch ((bool?)value)
+            {
+                case true:
+                    return false;
+                case false:
+                    return true;
+                default:
+                    return value;
+            }
+        }
+    }
+
+    /// <summary>
     /// TreeView线转换
     /// </summary>
-    public class WH_TreeViewLineConverter : IValueConverter
+    public class Converter_TreeViewLineConverter : IValueConverter
     {
         /// <summary>
         /// 转换函数

@@ -100,7 +100,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         }
 
         /// <summary>
-        /// 窗口标题依赖项
+        /// 默认目录依赖项
         /// </summary>
         public static readonly DependencyProperty DefaultDirectoryProperty = DependencyProperty.Register("DefaultDirectory", typeof(string), typeof(WH_SelectPathControl));
         /// <summary>
