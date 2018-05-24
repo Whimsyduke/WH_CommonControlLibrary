@@ -31,7 +31,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         /// <summary>
         /// 正则表达式属性
         /// </summary>
-        public string RegexExpression { set => SetValue(RegexExpressionProperty, value); get => (string)GetValue(RegexExpressionProperty); }
+        public string RegexExpression { set { SetValue(RegexExpressionProperty, value); } get { return (string)GetValue(RegexExpressionProperty); } }
 
         /// <summary>
         /// 正则表达式效验结果依赖项
@@ -41,7 +41,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         /// <summary>
         /// 正则表达式效验结果属性
         /// </summary>
-        public bool IsPassRegexCheck { private set => SetValue(IsPassRegexCheckProperty, value); get => (bool)GetValue(IsPassRegexCheckProperty); }
+        public bool IsPassRegexCheck { private set { SetValue(IsPassRegexCheckProperty, value); } get { return (bool)GetValue(IsPassRegexCheckProperty); } }
 
         /// <summary>
         /// 正则表达式效验失败颜色依赖项
@@ -51,7 +51,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         /// <summary>
         /// 正则表达式效验失败颜色属性
         /// </summary>
-        public Brush RegexCheckFailureColor { set => SetValue(RegexCheckFailureColorProperty, value); get => (Brush)GetValue(RegexCheckFailureColorProperty); }
+        public Brush RegexCheckFailureColor { set { SetValue(RegexCheckFailureColorProperty, value); } get { return (Brush)GetValue(RegexCheckFailureColorProperty); } }
 
         /// <summary>
         /// 正则表达式效验通过颜色依赖项
@@ -61,7 +61,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         /// <summary>
         /// 正则表达式效验通过颜色属性
         /// </summary>
-        public Brush RegexCheckPassColor { set => SetValue(RegexCheckPassColorProperty, value); get => (Brush)GetValue(RegexCheckPassColorProperty); }
+        public Brush RegexCheckPassColor { set { SetValue(RegexCheckPassColorProperty, value); } get { return (Brush)GetValue(RegexCheckPassColorProperty); } }
 
         #endregion
         #region 构造函数
