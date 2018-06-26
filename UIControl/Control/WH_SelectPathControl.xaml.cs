@@ -60,6 +60,9 @@ namespace WH_CommonControlLibrary.UIControl.Control
         #endregion
 
         #region 属性
+
+        #region 依赖项属性
+
         /// <summary>
         /// 控件类型依赖项
         /// </summary>
@@ -126,11 +129,11 @@ namespace WH_CommonControlLibrary.UIControl.Control
         }
 
         /// <summary>
-        /// 按钮文本依赖项
+        /// 路径文本依赖项
         /// </summary>
         public static readonly DependencyProperty PathTextProperty = DependencyProperty.Register("PathText", typeof(string), typeof(WH_SelectPathControl));
         /// <summary>
-        /// 按钮文本属性
+        /// 路径文本属性
         /// </summary>
         public string PathText
         {
@@ -139,11 +142,11 @@ namespace WH_CommonControlLibrary.UIControl.Control
         }
 
         /// <summary>
-        /// 按钮文本依赖项
+        /// 按钮宽度依赖项
         /// </summary>
         public static readonly DependencyProperty ButtonWidthProperty = DependencyProperty.Register("ButtonWidth", typeof(double), typeof(WH_SelectPathControl));
         /// <summary>
-        /// 按钮文本属性
+        /// 按钮宽度属性
         /// </summary>
         public double ButtonWidth
         {
@@ -156,7 +159,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         /// </summary>
         public static readonly DependencyProperty IsHaveSelectedProperty = DependencyProperty.Register("IsHaveSelected", typeof(bool?), typeof(WH_SelectPathControl));
         /// <summary>
-        /// 已选择本属性
+        /// 已选择属性
         /// </summary>
         public bool? IsHaveSelected
         {
@@ -171,6 +174,19 @@ namespace WH_CommonControlLibrary.UIControl.Control
             add { this.AddHandler(TextChangeRoutedEvent, value); }
             remove { this.RemoveHandler(TextChangeRoutedEvent, value); }
         }
+
+        #endregion
+
+        #region 属性
+        /// <summary>
+        /// 选定文件
+        /// </summary>
+        public FileInfo SelectedFile { set; get; }
+        /// <summary>
+        /// 选定目录
+        /// </summary>
+        public DirectoryInfo SelectedDirectory { set; get; }
+        #endregion
 
         #endregion
 
@@ -334,7 +350,21 @@ namespace WH_CommonControlLibrary.UIControl.Control
         private void TextBox_Path_TextChanged(object sender, TextChangedEventArgs e)
         {
             string path = TextBox_Path.Text;
-            IsHaveSelected = File.Exists(path) || Directory.Exists(path);
+            if (File.Exists(path))
+            {
+                SelectedFile = new FileInfo(path);
+                IsHaveSelected = true;
+            }
+            else if (Directory.Exists(path))
+            {
+                SelectedDirectory = new DirectoryInfo(path);
+                IsHaveSelected = true;
+            }
+            else
+            {
+
+                IsHaveSelected = false;
+            }
             TextChangeRoutedEventArgs args = new TextChangeRoutedEventArgs(TextChangeRoutedEvent, this, path);
             this.RaiseEvent(args);
         }
