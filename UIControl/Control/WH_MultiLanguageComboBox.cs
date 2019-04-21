@@ -22,7 +22,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
     public class WH_MultiLanguageComboBox : ComboBox
     {
         #region 属性
-        private WH_MultiLanguageSupport LanguageSupport;
+        private readonly WH_MultiLanguageSupport LanguageSupport;
         #endregion
 
         #region 构造函数

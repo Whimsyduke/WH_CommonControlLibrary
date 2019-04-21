@@ -10,7 +10,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="TextBox_Path" Grid.Column="0" Margin="3" Text="{Binding ElementName=SelectPathControl,Path=PathText,Mode=TwoWay}" TextChanged="TextBox_Path_TextChanged"/>
+        <TextBox Name="TextBox_Path" Grid.Column="0" Margin="3" Text="{Binding ElementName=SelectPathControl,Path=PathText,Mode=TwoWay}" TextChanged="TextBox_Path_TextChanged" HorizontalAlignment="{Binding ElementName=SelectPathControl,Path=HorizontalAlignment}"/>
         <Button Name="Button_Select" Grid.Column="1" Margin="3" Click="Button_Select_Click" Content="{Binding ElementName=SelectPathControl,Path=ButtonContent,Mode=TwoWay}" Width="{Binding ElementName=SelectPathControl,Path=ButtonWidth,Mode=TwoWay}"/>
     </Grid>
 </UserControl>

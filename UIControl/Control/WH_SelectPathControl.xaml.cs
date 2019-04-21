@@ -21,7 +21,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
     /// </summary>
     public class TextChangeRoutedEventArgs : RoutedEventArgs
     {
-        public TextChangeRoutedEventArgs(RoutedEvent routedEvent, object source, string text) : base(routedEvent, source) { }
+        public TextChangeRoutedEventArgs(RoutedEvent routedEvent, object source, string text) : base(routedEvent, source) { Text = text; }
 
         public string Text { set; get; }
     }
