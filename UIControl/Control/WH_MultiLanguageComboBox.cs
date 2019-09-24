@@ -35,6 +35,14 @@ namespace WH_CommonControlLibrary.UIControl.Control
             LanguageSupport = new WH_MultiLanguageSupport();
         }
 
+        /// <summary>
+        /// 静态构造函数
+        /// </summary>
+        static WH_MultiLanguageComboBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(WH_MultiLanguageComboBox), new FrameworkPropertyMetadata(typeof(WH_MultiLanguageComboBox)));
+        }
+        
         #endregion
 
         #region 方法

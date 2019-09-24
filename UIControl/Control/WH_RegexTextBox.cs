@@ -64,6 +64,7 @@ namespace WH_CommonControlLibrary.UIControl.Control
         public Brush RegexCheckPassColor { set => SetValue(RegexCheckPassColorProperty, value); get => (Brush)GetValue(RegexCheckPassColorProperty); }
 
         #endregion
+
         #region 构造函数
         /// <summary>
         /// 构造函数
@@ -72,6 +73,14 @@ namespace WH_CommonControlLibrary.UIControl.Control
         {
             this.LostFocus += WH_RegexTextBox_LostFocus;
             this.GotFocus += WH_RegexTextBox_GotFocus;
+        }
+
+        /// <summary>
+        /// 静态构造函数
+        /// </summary>
+        static WH_RegexTextBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(WH_RegexTextBox), new FrameworkPropertyMetadata(typeof(WH_RegexTextBox)));
         }
 
         #endregion
